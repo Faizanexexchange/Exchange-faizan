@@ -38,7 +38,7 @@ export default function Home() {
             className="rounded-3xl overflow-hidden shadow-2xl shadow-purple-900/20 mb-8 border border-white/10"
           >
             <img 
-              src="/attached_assets/prox_1765533035830.jpeg" 
+              src="/attached_assets/prox_1765533148893.jpeg" 
               alt="ProX Exchange Hero" 
               className="w-full h-auto object-cover"
             />
