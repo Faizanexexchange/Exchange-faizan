@@ -38,7 +38,7 @@ export default function Home() {
             className="rounded-3xl overflow-hidden shadow-2xl shadow-purple-900/20 mb-8 border border-white/10"
           >
             <img 
-              src="/attached_assets/prox_1765532201174.jpeg" 
+              src="/attached_assets/prox_1765533035830.jpeg" 
               alt="ProX Exchange Hero" 
               className="w-full h-auto object-cover"
             />
@@ -60,12 +60,23 @@ export default function Home() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-center leading-tight mb-8 uppercase"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-center leading-tight mb-4 uppercase"
           >
             YOUR WINNING <br />
             STREAK STARTS <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">RIGHT HERE</span>
           </motion.h1>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-gray-400 text-center text-lg mb-8 max-w-lg mx-auto leading-relaxed"
+          >
+            Join the ultimate betting exchange where high stakes meet instant payouts. 
+            Experience premium service, competitive odds, and 24/7 support on Pakistan's #1 trusted platform.
+          </motion.p>
 
           {/* CTA Buttons */}
           <div className="space-y-4 mb-12">
