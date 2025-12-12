@@ -1,206 +1,177 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Phone, ArrowRight, Shield, Zap, Trophy, CreditCard } from "lucide-react";
+import { Phone, Star, Shield, Zap, Trophy, CreditCard, MessageCircle, Lock, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const whatsappNumber = "923327549200";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
-  const displayPhone = "0332 754 9200";
-
+  
   return (
-    <div className="min-h-screen flex flex-col font-sans overflow-x-hidden">
+    <div className="min-h-screen flex flex-col font-sans bg-[#0a0514] text-white overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-lg">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0514]/90 backdrop-blur-md border-b border-white/5">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            {/* Logo from attached assets */}
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
-              <img 
-                src="/attached_assets/prox_1765532201174.jpeg" 
-                alt="ProX Exchange Logo" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="text-xl md:text-2xl font-tech font-bold text-white tracking-wider">
-              ProX <span className="text-primary">Exchange</span>
+          <div className="flex items-center">
+            <span className="text-xl md:text-2xl font-black tracking-tighter text-white">
+              ProX<span className="text-white">Exchange</span>
             </span>
           </div>
           <Button 
-            asChild 
-            className="bg-gradient-gold text-background hover:brightness-110 font-bold hidden sm:flex"
+            variant="outline"
+            className="rounded-full border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black font-semibold px-6"
           >
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              Get Your ID Now
-            </a>
+            Login
           </Button>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl opacity-20 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-[128px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-600 rounded-full blur-[128px]" />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10 text-center">
+      {/* Main Content */}
+      <main className="pt-20 pb-24">
+        <div className="container mx-auto px-4 max-w-lg md:max-w-2xl lg:max-w-5xl">
+          
+          {/* Hero Image Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
+            className="rounded-3xl overflow-hidden shadow-2xl shadow-purple-900/20 mb-8 border border-white/10"
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6 tracking-wide uppercase">
-              Premium Betting Exchange
-            </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white mb-6 leading-tight">
-              YOUR PLATFORM FOR <br />
-              <span className="text-gradient-gold">HIGH-STAKES ACTION</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Experience the thrill of premium betting with instant withdrawals, 24/7 support, and the most competitive odds in the market.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button 
-                asChild 
-                size="lg" 
-                className="w-full sm:w-auto bg-gradient-gold text-background hover:brightness-110 text-lg font-bold h-14 px-8"
-              >
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-                    alt="WhatsApp" 
-                    className="w-6 h-6 mr-2" 
-                  />
-                  Get Your ID Now
-                </a>
-              </Button>
-              <Button 
-                asChild 
-                variant="outline" 
-                size="lg" 
-                className="w-full sm:w-auto border-white/20 hover:bg-white/5 text-white h-14 px-8"
-              >
-                <a href="#features">
-                  Explore Features
-                </a>
-              </Button>
-            </div>
+            <img 
+              src="/attached_assets/prox_1765532201174.jpeg" 
+              alt="ProX Exchange Hero" 
+              className="w-full h-auto object-cover"
+            />
           </motion.div>
 
+          {/* Trusted Badge */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="mt-16 md:mt-24 relative max-w-4xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center justify-center gap-2 mb-4 text-[#FFD700]"
           >
-            <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/50 relative group">
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-              <img 
-                src="/attached_assets/prox_1765532201174.jpeg" 
-                alt="Platform Preview" 
-                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-8 z-20 flex flex-col items-center">
-                 <p className="text-white/80 font-tech tracking-widest text-sm mb-2">TRUSTED BY THOUSANDS</p>
-                 <div className="h-1 w-20 bg-primary rounded-full" />
-              </div>
-            </div>
+            <Star className="w-5 h-5 fill-current" />
+            <span className="font-medium">Pakistan's Most Trusted Platform</span>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Features Grid */}
-      <section id="features" className="py-20 bg-white/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Why Choose <span className="text-primary">ProX</span>?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">We provide a secure, fast, and premium environment for all your gaming needs.</p>
+          {/* Main Headline */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-center leading-tight mb-8 uppercase"
+          >
+            YOUR WINNING <br />
+            STREAK STARTS <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">RIGHT HERE</span>
+          </motion.h1>
+
+          {/* CTA Buttons */}
+          <div className="space-y-4 mb-12">
+            <Button 
+              asChild 
+              className="w-full bg-[#FFC107] hover:bg-[#FFD700] text-black font-black text-lg h-14 rounded-xl uppercase tracking-wide"
+            >
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                GET YOUR ID NOW &gt;
+              </a>
+            </Button>
+            
+            <Button 
+              asChild 
+              variant="outline"
+              className="w-full border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10 h-14 rounded-xl font-bold text-lg"
+            >
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                WhatsApp Us
+              </a>
+            </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Zap, title: "Instant Withdrawals", desc: "Get your winnings instantly to your account without delays." },
-              { icon: Shield, title: "100% Secure", desc: "Your data and funds are protected by state-of-the-art encryption." },
-              { icon: Trophy, title: "Best Odds", desc: "We offer the most competitive odds in the market for maximum returns." },
-              { icon: CreditCard, title: "Easy Deposit", desc: "Multiple payment methods supported for hassle-free deposits." }
-            ].map((feature, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -5 }}
-                className="glass-card p-6 rounded-xl hover:border-primary/50 transition-colors"
-              >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-                  <feature.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WhatsApp CTA Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto glass-card rounded-3xl p-8 md:p-12 text-center border-primary/20">
-            <div className="w-16 h-16 mx-auto bg-[#25D366] rounded-full flex items-center justify-center mb-6 shadow-lg shadow-[#25D366]/20">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-                alt="WhatsApp" 
-                className="w-10 h-10 filter brightness-0 invert" 
-              />
+          {/* Trust Indicators */}
+          <div className="flex justify-center items-center gap-6 md:gap-12 text-sm md:text-base mb-20 text-gray-400">
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-green-500" />
+              <span>Secure</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-display font-black text-white mb-6">
-              Start Winning Today
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Contact us on WhatsApp to get your ID instantly and join the action.
-            </p>
-            <div className="flex flex-col items-center gap-4">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xl font-bold h-16 px-10 rounded-full shadow-lg shadow-[#25D366]/20 transition-all hover:scale-105"
-              >
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  Chat on WhatsApp
-                </a>
-              </Button>
-              <div className="flex items-center gap-2 text-white/80 font-mono text-lg bg-black/30 px-4 py-2 rounded-lg border border-white/10">
-                <Phone className="w-4 h-4" />
-                <span>{displayPhone}</span>
+            <div className="flex items-center gap-2">
+              <Zap className="w-4 h-4 text-yellow-500" />
+              <span>Instant</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-purple-500" />
+              <span>Trusted</span>
+            </div>
+          </div>
+
+          {/* Features Section */}
+          <section className="mb-20">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-black uppercase mb-4">
+                Why Choose <span className="text-[#FFC107]">ProX</span>
+              </h2>
+              <p className="text-gray-400">
+                We provide the fastest and most secure environment for your gaming needs.
+              </p>
+            </div>
+
+            <div className="grid gap-6">
+              {/* Feature 1 */}
+              <div className="bg-[#130b24] p-8 rounded-2xl border border-white/5 flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-[#2a1f45] rounded-2xl flex items-center justify-center mb-6 text-[#FFC107]">
+                  <Zap className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Instant Withdrawals</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Get your winnings instantly to your bank account via UPI, Paytm, or Bank Transfer. No waiting.
+                </p>
+              </div>
+
+              {/* Feature 2 */}
+              <div className="bg-[#130b24] p-8 rounded-2xl border border-white/5 flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-[#1a2f24] rounded-2xl flex items-center justify-center mb-6 text-[#25D366]">
+                  <Smartphone className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">24/7 WhatsApp Support</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Our dedicated team is available round the clock to assist you with IDs and deposits.
+                </p>
+              </div>
+
+              {/* Feature 3 */}
+              <div className="bg-[#130b24] p-8 rounded-2xl border border-white/5 flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-[#2a1f45] rounded-2xl flex items-center justify-center mb-6 text-purple-400">
+                  <CreditCard className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">100% Secure Payments</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Your money is safe with us. We use advanced encryption to ensure secure transactions every time.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Footer */}
-      <footer className="py-8 border-t border-white/10 bg-black/40 text-center text-sm text-muted-foreground">
-        <div className="container mx-auto px-4">
-          <p>© 2024 ProX Exchange. All rights reserved.</p>
-          <p className="mt-2 text-xs opacity-50">Gambling involves risk. Please play responsibly.</p>
+          {/* Footer */}
+          <footer className="text-center text-gray-500 text-sm pb-8">
+            <p>© 2024 ProX Exchange. All rights reserved.</p>
+            <p className="mt-1">Play Responsibly. 18+ Only.</p>
+          </footer>
         </div>
-      </footer>
+      </main>
 
       {/* Floating WhatsApp Button */}
-      <a 
+      <motion.a 
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 transition-transform cursor-pointer"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/20 hover:scale-110 transition-transform cursor-pointer"
       >
-        <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-          alt="WhatsApp" 
-          className="w-8 h-8 filter brightness-0 invert" 
-        />
-      </a>
+        <MessageCircle className="w-8 h-8 text-white fill-current" />
+      </motion.a>
     </div>
   );
 }
